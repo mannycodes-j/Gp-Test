@@ -64,10 +64,13 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="text-center mb-6">
-            <p className="text-gray-600">
+          <motion.div variants={itemVariants} className="text-center mb-8">
+            <p className="text-gray-600 text-[13px]">
               Don't have an account yet?{' '}
-              <a href="#" className="text-[#3855B3] font-bold hover:underline">
+              <a
+                href="#"
+                className="text-[#3855B3] font-medium hover:underline"
+              >
                 Create an account
               </a>
             </p>
@@ -77,14 +80,14 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full flex items-center cursor-pointer justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 text-gray-700 hover:bg-gray-50 transition-colors mb-6"
+            className="w-full flex items-center cursor-pointer justify-center gap-2 border border-gray-300 rounded-[5px] py-3 px-4 text-gray-700 hover:bg-gray-50 transition-colors mb-6"
           >
             <img
               src="/assets/images/google.png"
               alt="Google"
               className="h-5 w-5"
             />
-            <span>Sign up with Google</span>
+            <span className="font-medium">Sign up with Google</span>
           </motion.button>
 
           <motion.div
@@ -99,13 +102,16 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
 
           <form onSubmit={handleSubmit}>
             <motion.div variants={itemVariants} className="mb-4">
-              <label htmlFor="username" className="block text-gray-700 mb-2">
+              <label
+                htmlFor="username"
+                className="block text-gray-700 mb-2 text-[13px]"
+              >
                 Username
               </label>
               <input
                 id="username"
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+                className="w-full px-3 py-3 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -114,12 +120,15 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
 
             <motion.div variants={itemVariants} className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <label htmlFor="password" className="block text-gray-700">
+                <label
+                  htmlFor="password"
+                  className="block text-gray-700  text-[13px]"
+                >
                   Password
                 </label>
                 <a
                   href="#"
-                  className="text-[#3855B3] font-bold text-sm hover:underline"
+                  className="text-[#3855B3] font-bold text-[11px] hover:underline"
                 >
                   Forgot password?
                 </a>
@@ -127,7 +136,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
               <input
                 id="password"
                 type="password"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+                className="w-full px-3 py-3 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -142,7 +151,9 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                   checked={keepLoggedIn}
                   onChange={(e) => setKeepLoggedIn(e.target.checked)}
                 />
-                <span className="text-gray-700">Keep me logged in</span>
+                <span className="text-gray-700 text-[12px]">
+                  Keep me logged in
+                </span>
               </label>
             </motion.div>
 

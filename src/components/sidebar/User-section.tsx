@@ -8,12 +8,26 @@ interface UserSectionProps {
 
 export const UserSection = ({ username }: UserSectionProps) => {
   return (
-    <div className={`${styles.cardHover} m-4 rounded-lg p-3 cursor-pointer`}>
+    <div
+      className={`${styles.cardHover} m-4 rounded-lg p-3 cursor-pointer ${styles.userSection}`}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Avatar>
+          {/* <div
+            className={cn(
+              'flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-xs text-white',
+              styles.pulseAnimation
+            )}
+          >
+            {username.charAt(0).toUpperCase()}
+          </div> */}
+          <Avatar className={`${styles.pulseAnimation}`}>
             <AvatarImage src="/placeholder.svg" />
-            <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>
+            <AvatarFallback
+              className={`flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-xs text-white ${styles.pulseAnimation}`}
+            >
+              {username[0].toUpperCase()}
+            </AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium text-white">{username}</span>
         </div>

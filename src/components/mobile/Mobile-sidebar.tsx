@@ -7,15 +7,7 @@ import { TeamCard } from '@/components/sidebar/Team-card'
 import { NavItem } from '@/components/sidebar/Nav-item'
 import { StorageCard } from '@/components/sidebar/Storage-card'
 import { UserSection } from '@/components/sidebar/User-section'
-import {
-  LayoutDashboard,
-  BarChart2,
-  MessageCircle,
-  Users,
-  ListTodo,
-  FileText,
-  Settings,
-} from 'lucide-react'
+
 
 interface MobileSidebarProps {
   isOpen: boolean
@@ -41,11 +33,11 @@ export const MobileSidebar = ({
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#1a3380] z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-52 bg-[#1a3380] z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } flex flex-col`}
       >
-        <div className="flex items-center justify-end p-4">
+        <div className="flex items-center justify-end ">
           <Button
             variant="ghost"
             size="icon"
@@ -57,20 +49,34 @@ export const MobileSidebar = ({
           </Button>
         </div>
 
-        <Logo />
+        <Logo padding="p-3" />
+
         <TeamCard />
 
-        <div className="flex-1 space-y-6 px-3 py-4">
+        <div className="flex-1 space-y-1 px-3 py-2">
           <nav className="space-y-0.5 text-[12px]">
             <NavItem
-              icon={LayoutDashboard}
+              imageSrc="/assets/images/Graph.png"
               label="Dashboard"
               href="/dashboard"
               isActive
             />
-            <NavItem icon={BarChart2} label="Overview" href="/overview" />
-            <NavItem icon={MessageCircle} label="Chat" href="/chat" badge={5} />
-            <NavItem icon={Users} label="Team" href="/team" />
+            <NavItem
+              imageSrc="/assets/images/Chart.png"
+              label="Overview"
+              href="/overview"
+            />
+            <NavItem
+              imageSrc="/assets/images/Chat.png"
+              label="Chat"
+              href="/chat"
+              badge={5}
+            />
+            <NavItem
+              imageSrc="/assets/images/User.png"
+              label="Team"
+              href="/team"
+            />
           </nav>
 
           <div>
@@ -78,9 +84,21 @@ export const MobileSidebar = ({
               SHORTCUT
             </p>
             <nav className="space-y-0.5 text-[12px]">
-              <NavItem icon={ListTodo} label="Tasks" href="/tasks" />
-              <NavItem icon={FileText} label="Reports" href="/reports" />
-              <NavItem icon={Settings} label="Settings" href="/settings" />
+              <NavItem
+                imageSrc="/assets/images/Document.png"
+                label="Tasks"
+                href="/tasks"
+              />
+              <NavItem
+                imageSrc="/assets/images/Danger.png"
+                label="Reports"
+                href="/reports"
+              />
+              <NavItem
+                imageSrc="/assets/images/Setting.png"
+                label="Settings"
+                href="/settings"
+              />
             </nav>
           </div>
         </div>

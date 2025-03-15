@@ -48,6 +48,19 @@ const Dashboard = ({ username = 'User' }: DashboardProps) => {
       transition: { type: 'spring', stiffness: 100 },
     },
   }
+  const bellVariants = {
+    initial: { rotate: 0 },
+    ringing: {
+      rotate: [0, 15, -13, 10, -8, 5, -3, 0],
+      transition: {
+        duration: 0.6,
+        ease: 'easeInOut',
+        times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1],
+        repeat: Number.POSITIVE_INFINITY,
+        repeatDelay: 0.5,
+      },
+    },
+  }
 
   // const cardVariants = {
   //   hidden: { scale: 0.95, opacity: 0 },
@@ -244,14 +257,17 @@ const Dashboard = ({ username = 'User' }: DashboardProps) => {
             whileTap="tap"
             className="col-span-full md:col-span-1"
           >
-            <Card className={`${styles.cardHover}`}>
+            <Card className={`${styles.cardHover} group`}>
               <CardHeader className="flex flex-row items-center mb-[-20px] justify-between">
                 <CardTitle className="text-black text-[13px] font-medium">
                   Group info
                 </CardTitle>
                 <motion.div
-                  whileHover={{ rotate: 15, scale: 1.1 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
+                  variants={bellVariants}
+                  initial="initial"
+                  animate="initial"
+                  className="group-hover:animate-bell"
+                  whileHover={{ scale: 1.1 }}
                 >
                   <Bell className="h-5 w-5 text-gray-400" />
                 </motion.div>

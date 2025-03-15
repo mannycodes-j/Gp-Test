@@ -22,22 +22,22 @@ export const MobileHeader = ({ username, onMenuToggle }: MobileHeaderProps) => {
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
-      </div>
-      <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon">
           <Search className="h-5 w-5" />
         </Button>
+      </div>
+      <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="relative">
           <Bell className="h-5 w-5" />
           <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
         </Button>
         <img
-          src="/de.svg"
-          alt="German Flag"
+          src="/assets/images/flag.png"
+          alt="Flag"
           className="h-5 w-7 rounded-sm object-cover"
         />
         <Avatar className="h-8 w-8">
-          <AvatarImage src="/placeholder.svg" />
+          <AvatarImage src="/assets/images/#.png" />
           <AvatarFallback>{username.charAt(0)}</AvatarFallback>
         </Avatar>
       </div>
