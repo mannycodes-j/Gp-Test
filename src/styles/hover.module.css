@@ -1,0 +1,153 @@
+/* Sidebar animation enhancements */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.sidebarSlideIn {
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.sidebarSlideOut {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+
+.overlayFadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.overlayFadeOut {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.hoverEffect {
+  transition: all 0.3s ease;
+}
+
+.hoverEffect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.glassEffect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Base colors directly in CSS */
+.yellowCard {
+  background-color: #FFF8E1 !important; /* Light yellow background */
+}
+.redMarkCircle{
+  width: 16px;  /* w-4 (4 * 4px = 16px) */
+  height: 16px; /* h-4 */
+  border-radius: 50%; 
+  border: 1.5px solid #FF6422;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.redMark{
+   width: 12px; /* w-3 (3 * 4px = 12px) */
+  height: 12px; /* h-3 */
+  color: #FF6422; 
+  font-weight: 900;
+}
+.blueMark{
+   width: 12px; /* w-3 (3 * 4px = 12px) */
+  height: 12px; /* h-3 */
+  color: #4A4DE6; 
+  font-weight: 900;
+}
+.blueMarkCircle{
+  width: 16px;  /* w-4 (4 * 4px = 16px) */
+  height: 16px; /* h-4 */
+  border-radius: 50%; /* rounded-full */
+  border: 1.5px solid #4A4DE6; /* border-green-700 */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; 
+}
+
+.blueCard {
+  background-color: #E1F5FD !important; /* Light blue background */
+}
+
+.cardHover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardHover1 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #FFF !important; /* Light yellow background */
+}
+
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.cardHover1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effects */
+.yellowCardHover:hover {
+  background-color: #fff3d6 !important; /* Slightly darker yellow on hover */
+}
+
+.blueCardHover:hover {
+  background-color: #d6e9ff !important; /* Slightly darker blue on hover */
+}
+
+.buttonHover {
+  transition: all 0.2s ease;
+}
+
+.buttonHover:hover {
+  transform: scale(1.05);
+}
+
+.sidebarItemHover {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebarItemHover:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.375rem;
+}
+.textEffect:hover{
+  color: #FF6422;
+  font-weight: 900;
+}
