@@ -1,34 +1,43 @@
-import type { LucideIcon } from 'lucide-react'
+
 import { cn } from '@/lib/utils'
 import { Link } from 'react-router-dom'
+import styles from '@/styles/hover.module.css'
 
 interface NavItemProps {
-  icon: LucideIcon
   label: string
   href: string
   isActive?: boolean
   badge?: number
+  imageSrc: string
 }
 
-export const NavItem = ({
-  icon: Icon,
-  label,
-  href,
-  isActive,
-  badge,
-}: NavItemProps) => {
+export const NavItem = ({ imageSrc, label, href, isActive, badge }: NavItemProps) => {
   return (
     <Link
-      to={href} // Changed from href to to
+      to={href}
       className={cn(
-        `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-white`,
-        isActive ? 'bg-white/10 text-white' : 'text-gray-200'
+        `flex items-center gap-3 rounded-lg px-3 py-2 transition-all relative overflow-hidden`,
+        isActive ? 'bg-white/10 text-white' : 'text-gray-400 font-normal',
+        styles.navItem
       )}
     >
-      <Icon className="h-5 w-5" />
-      <span>{label}</span>
+      <div
+        className={cn('h-4 w-4 flex items-center justify-center', styles.icon)}
+      >
+        <img
+          src={imageSrc || '/placeholder.svg'}
+          alt={label}
+          className="h-8 w-8 object-contain"
+        />
+      </div>
+      <span className={styles.label}>{label}</span>
       {badge && (
-        <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-whitetext-xs">
+        <span
+          className={cn(
+            `ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-white text-xs`,
+            styles.badge
+          )}
+        >
           {badge}
         </span>
       )}
