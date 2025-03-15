@@ -49,23 +49,23 @@ const Dashboard = ({ username = 'User' }: DashboardProps) => {
     },
   }
 
-  const cardVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 100 },
-    },
-    hover: {
-      scale: 1.02,
-      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
-      transition: { type: 'spring', stiffness: 400, damping: 10 },
-    },
-    tap: {
-      scale: 0.98,
-      transition: { type: 'spring', stiffness: 400, damping: 17 },
-    },
-  }
+  // const cardVariants = {
+  //   hidden: { scale: 0.95, opacity: 0 },
+  //   visible: {
+  //     scale: 1,
+  //     opacity: 1,
+  //     transition: { type: 'spring', stiffness: 100 },
+  //   },
+  //   hover: {
+  //     scale: 1.02,
+  //     boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+  //     transition: { type: 'spring', stiffness: 400, damping: 10 },
+  //   },
+  //   tap: {
+  //     scale: 0.98,
+  //     transition: { type: 'spring', stiffness: 400, damping: 17 },
+  //   },
+  // }
 
   const progressVariants = {
     hidden: { width: '0%' },
