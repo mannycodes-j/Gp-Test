@@ -302,11 +302,11 @@ const Dashboard = ({ username = 'User' }: DashboardProps) => {
             <Card className={`${styles.cardHover}`}>
               <CardHeader className="flex flex-row items-center justify-between">
                 <div className="w-full">
-                  <CardTitle className="text-black text-[13px] font-medium">
+                  <CardTitle className="text-black text-[12px] font-medium">
                     Overall progress
                   </CardTitle>
                   <div className="mt-4 flex items-center justify-between">
-                    <h3 className="text-[15px] font-medium">
+                    <h3 className="text-[15px] font-normal">
                       Germany for <br /> beginners
                     </h3>
                     <motion.img
